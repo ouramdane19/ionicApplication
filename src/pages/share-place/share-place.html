@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>sharePlace</ion-title>
+    <ion-buttons end="">
+     <button ion-button="" icon-only (click)="onEmail()" >
+      <ion-icon name="send"></ion-icon>
+     </button> 
+     </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+        <div padding>
+          <ion-label  color="secondary" stacked >to</ion-label>
+            <ion-input  type="text" name="to" [(ngModel)]="to" placeholder="to" clearInput ></ion-input>
+          <ion-label  stacked color="secondary">cc</ion-label>
+            <ion-input type="text" name="cc" [(ngModel)]="cc"  placeholder="cc"  clearInput ></ion-input>
+          <ion-label  stacked color="secondary">subject</ion-label>
+            <ion-input type="text" name="subject" [(ngModel)]="subject"   placeholder="subject"  clearInput ></ion-input>
+          <ion-label  stacked color="secondary">Text</ion-label>
+            <ion-textarea   name="body"  [(ngModel)]="body" clearInput ></ion-textarea>
+       <ion-label  stacked color="secondary">Attachements</ion-label>
+      <!-- <ion-input type="text" name="attach" [(ngModel)]="attach"   placeholder="Attachements"  clearInput ></ion-input> -->
+              <ion-slides padding pager="true">
+                  <ion-slide  *ngFor="let item of place.photos" >
+                      <img [src]="item" alt="photos">
+                </ion-slide>
+              </ion-slides> 
+        </div>    
+</ion-content>

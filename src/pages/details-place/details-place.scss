@@ -1,0 +1,25 @@
+page-details-place {
+  #map2 {
+    position: relative;
+    left: 18%;
+    top: 20%;
+    transform: translate(-15%, -30%);
+    width: 95%;
+    height: 60%;
+    min-height: 40%;
+  }
+
+  .item-profile {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    height: 250px;
+  }
+
+  .item-detail {
+    position: relative;
+    width: 100%;
+    background: white;
+    position: absolute;
+  }
+}

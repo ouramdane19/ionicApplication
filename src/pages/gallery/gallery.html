@@ -1,0 +1,64 @@
+
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>My Gallery</ion-title>
+    <button ion-button="" menuToggle="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content padding="">
+    <ion-searchbar [(ngModel)]="motCle" (change)="onSearch()" autocorrect="off" 
+    placeholder="Chercher des photos dans pixaby" ></ion-searchbar>
+    <ion-buttons>
+        <button *ngIf="motCle" ion-button icon-start clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>{{currentPage+"/"+totalPages}} Pages </div>
+          </button>
+          <button  *ngIf="motCle" ion-button icon-start clear small>
+            <ion-icon name="basket"></ion-icon>
+            <div>{{images.totalHits}} photos </div>
+          </button>
+    </ion-buttons>
+    
+  <ion-card *ngFor="let im of images?.hits" >
+    <ion-card-header class="myCardHeader">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{im.userImageURL}}">
+        </ion-avatar>
+        <h2>{{im.user}}</h2>
+        <p>{{im.user_id}}</p> 
+      </ion-item>
+    </ion-card-header>
+    <img src="{{im.previewURL}}" (click)="onDetailsImage(im)">
+    <ion-card-content>
+      <p>Height: <strong>{{im.imageHeight}}</strong></p>
+      <p>widht: <strong>{{im.imageWidth}}</strong></p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{im.likes}} Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{im.comments}} Commentes </div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{im.favorites}} Favorites</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+

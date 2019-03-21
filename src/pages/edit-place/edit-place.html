@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Edition de {{place.title}}</ion-title>
+    <ion-buttons end="">
+        <button ion-button="" icon-only="" (click)="monadresse()">
+          <ion-icon name="locate"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end="">
+          <button ion-button="" icon-only="" (click)="onTakePicture()">
+            <ion-icon name="camera"></ion-icon>
+          </button>
+        </ion-buttons>
+      <ion-buttons end="">
+          <button ion-button="" icon-only="" (click)="updatePlace()">
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-navbar>
+  
+</ion-header>
+<ion-content padding>
+
+    <div class="item-profile" text-center  [style.background-image]>
+        <ion-slides pager="true">
+           <ion-slide  *ngFor="let pic of place?.photos;" (click)="onPhotoDetails(pic)">
+               <img  [src]="pic" *ngIf="pic" alt="Photo " class="rounded-top">
+         </ion-slide>
+       </ion-slides> 
+   </div>
+
+    <div>
+      <ion-label  color="secondary" stacked >Title</ion-label>
+        <ion-input  type="text" [(ngModel)]="place.title" name="title" placeholder="Title"  value="{{place.title}}"  ></ion-input>
+      <ion-label  stacked color="secondary">Country</ion-label>
+        <ion-input  type="text" [(ngModel)]="place.country" name="country" value="{{place.country}}"  ></ion-input>
+      <ion-label  stacked color="secondary">City</ion-label>
+        <ion-input type="text" [(ngModel)]="place.city" name="city" value="{{place.city}}"  ></ion-input>
+      <ion-label  stacked color="secondary">key Words</ion-label>
+        <ion-input   type="text" [(ngModel)]="place.motsCles"  name="motsCles" value="{{place.motsCles}}"  ></ion-input>
+     
+    </div> 
+</ion-content>

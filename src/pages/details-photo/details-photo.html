@@ -1,0 +1,14 @@
+
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>detailsPhoto</ion-title>
+    <ion-buttons end="">
+        <button ion-button="" icon-only (click)="deletePicture()" >
+         <ion-icon name="trash"></ion-icon>
+        </button> 
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <img [src]="image" class="rounded-top" >
+</ion-content>

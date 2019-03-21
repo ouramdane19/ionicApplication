@@ -1,0 +1,61 @@
+
+<ion-header>
+    <ion-navbar color="dark">
+      <ion-title>New Places</ion-title>
+      <ion-buttons >
+      </ion-buttons>
+      <ion-buttons end="">
+        <button ion-button="" icon-only="" (click)="onTakePicture()">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end="">
+     <button ion-button="" icon-only (click)="monadresse()" >
+      <ion-icon name="locate"></ion-icon>
+     </button> 
+     </ion-buttons>
+     <ion-buttons end="">
+        <button ion-button="" icon-only="">
+          <ion-icon name="settings"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item  *ngFor="let im of pictures">
+           <img  [src]="im" *ngIf="im" >
+        </ion-item>
+    </ion-list>  
+
+    <!-- <button padding ion-button=""  block="" (click)="monadresse()">Adresse probable</button> 
+        <div *ngIf="adresse==[]"  class="item-detail" padding>
+            <p>Country: <strong>{{adresse.countryName}}</strong></p>
+            <p>Région: <strong>{{adresse.administrativeArea}}</strong></p> 
+            <p>Département: <strong>{{adresse.subAdministrativeArea}}</strong></p>  
+            <p>City: <strong>{{adresse.locality}}</strong></p>
+            <p>Code Postale: <strong>{{adresse.postalCode}}</strong></p> 
+            <p>rue: <strong>{{adresse.thoroughfare}}</strong></p>
+        </div> -->
+
+  <form   #f="ngForm" (ngSubmit)="onAddPlace(f.value)">
+      <div class="form-group ">
+        <ion-label for="title" color="secondary"stacked >Title</ion-label>
+          <ion-input id ="title" type="text" name="title" ngModel placeholder="Title" clearInput class="form-control" required value="{{adresse.locality}}"  ></ion-input>
+        </div> 
+        <div class="form-group">
+          <ion-label for="country" stacked color="secondary">Country</ion-label>
+          <ion-input id ="country" type="text" name="country" class="form-control" ngModel class="form-control" placeholder=" country" value="{{adresse.countryName}}" clearInput ></ion-input>
+        </div> 
+        <div class="form-group">
+          <ion-label for="city" stacked color="secondary">City</ion-label>
+          <ion-input id ="city"type="text" name="city" ngModel  class="form-control" placeholder="city" value="{{adresse.locality}}" clearInput ></ion-input>
+        </div> 
+        <div class="form-group">
+          <ion-label for="motsCles" stacked color="secondary">key Words</ion-label>
+          <ion-input id="motsCles"  type="text" ngModel  name="motsCles" class="form-control"  placeholder="{{adresse.countryName}} {{adresse.locality}}" value="{{adresse.countryName}} {{adresse.locality}} " clearInput ></ion-input>
+        </div> 
+      
+      <button ion-button="" type="submit" block=""  >save place</button> 
+    </form>
+</ion-content>

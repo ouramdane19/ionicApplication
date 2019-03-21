@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>{{place.title}}</ion-title>
+    <button end="" ion-button="" menuToggle="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+    <div class="item-profile" text-center  [style.background-image] >
+         <ion-slides padding pager="true" autoplay="800" effect="fade" loop="true" >
+            <ion-slide  *ngFor="let pic of place.photos;" (click)="onPhotoDetails(pic)" (ionSlideDidChange)="slideChanged()">
+                <img  [src]="pic" *ngIf="pic" alt="Photo " class="rounded-top">
+          </ion-slide>
+        </ion-slides> 
+    </div>
+        <div class="container-fluid" text-center> 
+          <h3 color="light">Adresse</h3>
+            <p>Title: <strong>{{place.title}}</strong></p>
+            <p>Country: <strong>{{adresse.countryName}}</strong></p>
+            <p>Région: <strong>{{adresse.administrativeArea}}</strong></p> 
+            <p>Département: <strong>{{adresse.subAdministrativeArea}}</strong></p>  
+            <p>City: <strong>{{adresse.locality}}</strong></p>
+            <p>Code Postale: <strong>{{adresse.postalCode}}</strong></p> 
+            <p>Rue: <strong>{{adresse.thoroughfare}}</strong></p>
+            <p>Date de création: <strong>{{place.timeStamp|date:'dd/MM/yyyy-HH:mm'}}</strong></p> 
+        </div> 
+        <div class="container-fluid" id="map2" padding ></div>  
+</ion-content>
+

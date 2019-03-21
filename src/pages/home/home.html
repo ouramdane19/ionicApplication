@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar color="dark">
+      <ion-title>Accueil</ion-title>
+      <button ion-button="" menuToggle="">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-buttons end="">
+          <button ion-button="" icon-only="">
+            <ion-icon name="settings"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+   </ion-header>
+<ion-content class="stylePage" >  
+  <div class="container" id="map" padding >
+      <ion-buttons class="leaflet-bottom leaflet-top leaflet-right" end="" >
+          <button   ion-button icon-only=""  (click)="currentLocation()" color="light"  >
+              <ion-icon name="locate"></ion-icon>
+            </button>
+            <button ion-button icon-only="" (click)="placesDisplay()" color="light">
+                <ion-icon ios="ios-pin" md="md-pin" ></ion-icon>
+            </button>
+      </ion-buttons> 
+  </div>
+</ion-content>
+

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Search</ion-title>
+    <button ion-button="" menuToggle="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="searchQuery" (change)="onSearchLocation()" autocorrect="off" placeholder="Entrer le nom d'une place " ></ion-searchbar>
+  <ion-list *ngFor="let p of result" (click)="onPlaceDetails(p)">
+      <ion-item-sliding  #item >
+          <ion-item  >
+         <ion-avatar item-start >
+             <img *ngIf="!p.photos==[]" [src]="p.photos[0]" alt="Photo d'une place" > 
+         </ion-avatar>
+           <h2>{{p.title}}</h2>
+           <p> {{p.city}} {{p.country}} </p>
+         </ion-item>
+         <ion-item-options side="left">
+             <button item-end ion-button color="danger" expandable (click)="deletPlace(p)">
+                 <ion-icon name="trash"></ion-icon>
+                 Delete
+             </button> 
+         </ion-item-options>
+         <ion-item-options side="right">
+             <button item-end ion-button color="light" expandable (click)="onPlaceDetails(p)">
+                 <ion-icon name="information-circle"></ion-icon>
+              details
+             </button>
+           <button item-end ion-button color="secondary" expandable (click)="editPlace(p)">
+                 <ion-icon name="create"></ion-icon>
+                edit
+               </button> 
+               <button item-end ion-button color="primary" expandable (click)="sharePlace(p)">
+                   <ion-icon name="send"></ion-icon>
+                   share
+                 </button> 
+           </ion-item-options>
+       </ion-item-sliding> 
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)=" doInfinite($event) ">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
