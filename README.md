@@ -16,8 +16,9 @@ All app preview screenshots were taken by running `ionic serve --lab`.
 
 - [Home page]()
 
-  <img src="www/assets/images/home_picture.png" WIDTH=300
-HEIGHT=600 alt="home">
+<img src="resources/home_picture.png" WIDTH=300
+HEIGHT=600 alt="Schedule">
+
 
 ## Features
   * Ionic 4.7.1
