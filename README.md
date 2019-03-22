@@ -10,6 +10,19 @@ When you start the app, you see a map centering around your location, with a mar
 
 **Note: This project is under development.**
 
+## App Preview
+
+All app preview screenshots were taken by running `ionic serve --lab`.
+
+- [Home page]()
+
+  <img src="www/assets/images/home_picture.png" WIDTH=300
+HEIGHT=600 alt="Schedule">
+
+
+- To see more images of the app, check out the [screenshots directory](https://github.com/ionic-team/ionic-conference-app/tree/master/resources/screenshots)!
+
+
 ## Features
   * Ionic 4.7.1
   * [node, npm](https://github.com/nodejs/)
