@@ -17,11 +17,7 @@ All app preview screenshots were taken by running `ionic serve --lab`.
 - [Home page]()
 
   <img src="www/assets/images/home_picture.png" WIDTH=300
-HEIGHT=600 alt="Schedule">
-
-
-- To see more images of the app, check out the [screenshots directory](https://github.com/ionic-team/ionic-conference-app/tree/master/resources/screenshots)!
-
+HEIGHT=600 alt="home">
 
 ## Features
   * Ionic 4.7.1
