@@ -15,7 +15,7 @@ When you start the app, you see a map centering around your location, with a mar
   * [node, npm](https://github.com/nodejs/)
   * [TypeScript](http://www.typescriptlang.org/)
   * [JS]()
-  * [HTML5/CSS3]()
+
 
 
 ## Install
