@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "appliTest",
+  "bundledWebRuntime": false,
+  "webDir": "www",
+  "linuxAndroidStudioPath": "/home/ouramdane/android-studio/bin/studio.sh"
+
+}
